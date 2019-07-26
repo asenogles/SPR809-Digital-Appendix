@@ -1,0 +1,656 @@
+/*GLOBAL*/
+
+footer{
+    text-align: center;
+    max-height:15px;
+}
+
+h1 {
+    text-align: center;
+    color:#111;
+    padding-bottom: 1vh;
+    font-family: 'Titillium Web' ,sans-serif;
+    font-weight: 300;
+    font-size: 50px;
+    text-transform: capitalize;
+}
+
+p {
+    color:#333;
+    line-height: 1.5em;
+    font-size: 18px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+a {
+    color: #333;
+    text-decoration: underline;
+}
+
+a:hover{
+    color: #e8491d !important;
+}
+
+.button{
+    font-size: 18px;
+    text-decoration: none;
+    color:#fff;
+    border: #fff 1px solid;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top:20px;
+    background-color: transparent;
+
+    font-family: 'Titillium Web' ,sans-serif;
+    font-weight: 300;
+    text-transform: capitalize;
+    font-size: 22px;
+}
+
+.button:hover{
+    background: #fff;
+    color: #e8491d;
+    text-decoration: none;
+}
+/*----NAVBAR-----*/
+
+
+ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
+    display: block!important;
+} /**- IDEA: adds dropdown with hover - fix double click problem before implementing**/
+
+.dropdown-menu{
+    margin-top: 0;
+    width:auto;
+}
+
+.custom-nav img{
+    margin: auto 10vw !important;
+    height: 50px;
+}
+
+/*.navbar-nav li>a:hover,.navbar-nav li>a:focus,.navbar-nav li.active {
+    color:#e8491d!important;
+}   TODO: Verify you don't need this*/
+
+
+
+.custom-nav a{
+  color: #333;
+  text-decoration: none;
+}
+
+.custom-nav a:hover, .custom-nav a.active{
+  color:#e8491d!important;
+  text-decoration: underline;
+}
+
+#main-title{
+  color:#111!important;
+  text-decoration: underline!important;
+  font-weight: bold!important;
+  font-size: 20px!important;
+}
+
+
+
+
+
+
+/*------HOME PAGE------*/
+
+/*WELCOME PAGE*/
+@media only screen and (min-width: 1920px){
+    #showcase{
+        margin:0 !important;
+        font-size: 17px;
+        line-height:1.2;
+        background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.5)
+            ),
+        url("../src/img/showcase_google_highres60-min.jpg");
+        background-size: cover;
+        background-position: center;
+        height:100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+    }
+}
+
+@media only screen and (max-width: 1919px){
+    #showcase{
+        margin:0 !important;
+        font-size: 17px;
+        line-height:1.2;
+        background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.5)
+            ),
+        url("../src/img/showcase_google_medres_85-min.jpg");
+        background-size: cover;
+        background-position: center;
+        height:100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+    }
+}
+
+@media only screen and (max-width: 1280px){
+    #showcase{
+        margin:0 !important;
+        font-size: 17px;
+        line-height:1.2;
+        background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.5)
+            ),
+        url("../src/img/showcase_google_lowres_85-min.jpg");
+        background-size: cover;
+        background-position: center;
+        height:100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+    }
+}
+
+#showcase h1{
+    font-size: 100px;
+    color: #fff;
+    font-family: 'Titillium Web' ,sans-serif;
+    font-weight: 200;
+    text-transform: capitalize;
+}
+
+#showcase h2{
+    font-size: 30px !important;
+    line-height: 1.5em;
+    padding-top: 20px !important;
+    padding-bottom:20px !important;
+    margin:0px !important;
+    color: #fff;
+    text-shadow: 1px 1px #000;
+    font-family: 'Titillium Web' ,sans-serif;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.showcasefive{
+    height:100vh;
+}
+
+.showcase-text p{
+    font-size: 25px !important;
+    margin: 50px auto;
+    text-align:center;
+}
+
+/*about section of site*/
+#info1{
+    margin: auto 50px;
+    padding-top:10vh;
+    margin-bottom: 10vh;
+}
+
+#info1 h3 {
+    text-align: center;
+    color:#e8491d;
+    padding-bottom: 5vh;
+}
+
+#info1 h5 {
+    text-align: left;
+    color:#e8491d;
+}
+
+#info1 p{
+    text-align: justify;
+}
+
+#info1 .block-text {
+    padding:50px;/* TODO: Alter this!*/
+}
+
+#info1 img{
+    width:100%;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 25px;
+    border-radius: 20px;
+}
+.button .btn{
+    margin:20px 0px;
+    font-family: 'Titillium Web' ,sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    text-transform: capitalize;
+    background-color: transparent;
+    color: #111;
+    border: #111 1px solid;
+    padding: auto;
+    border-radius: 10px;
+}
+.button .btn:hover{
+    color: #e8491d;
+}
+
+/*Contact*/
+#contact{
+    padding-top: 10vh;
+
+}
+
+#contact p{
+    text-align: center;
+}
+
+#contact h3 ,#contact a{
+    color: #e8491d;
+    text-align: center;
+    font-family: 'Titillium Web' ,sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+#contact label{
+    color: #111;
+    font-family: 'Titillium Web' ,sans-serif;
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+#contact .button{
+    color:#111;
+    border: #111 1px solid;
+}
+#contact .button:hover{
+    background: #fff;
+    color: #e8491d;
+    cursor: pointer;
+}
+#contact textarea{
+    height:25vh;
+}
+
+/*----DIGITAL PORTFOLIO-----*/
+
+/*jumbotron functions for digital-portfolio page*/
+
+#top-row{
+    margin-top: 100px;
+
+}
+#top-row .jumbotron{
+    /*Alter height?*/
+}
+
+.jumb-text h1{
+    color: #fff;
+    text-shadow: 2px 1px #000;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
+.jumb-text h3{
+    font-size: 25px;
+    line-height: 1.5em;
+    color: #fff;
+    font-family: 'Titillium Web' ,sans-serif;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
+.jumb-text p{
+    color:#fff;
+    text-shadow: 1px 1px #000;
+    text-align: center;
+    font-weight: 300;
+}
+
+.jumb-text hr{
+    border: #fff 0.5px solid;
+}
+
+.jumb-text .button{
+    margin-top: 0px;
+    display: inline-block;
+    text-shadow: none;
+}
+
+@media only screen and (min-width: 1920px){
+    #pointclouds-jumbo{
+        background-image:
+        url(../src/img/yellowJacket_highres85-min.jpg);
+        background-size: cover;
+    }
+
+    #coast{
+        background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.3)
+            ),
+        url(../src/img/showcase_google_medres_85-min.jpg);
+        background-size: cover;
+
+    }
+
+    #trajectory{
+        background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.3)
+            ),
+        url(../src/img/trajectory2_highres.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    #resume{
+        background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.3)
+            ),
+        url(../src/img/writing_dark_highres-min.jpg);
+        background-size: cover;"
+    }
+}
+
+@media only screen and (max-width: 1919px){
+    #pointclouds-jumbo{
+        background-image:
+        url(../src/img/yellowJacket_lowres85-min.jpg);
+        background-size: cover;
+    }
+
+    #coast{
+        background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.3)
+            ),
+        url(../src/img/showcase_google_lowres_85-min.jpg);
+        background-size: cover;
+
+    }
+
+    #trajectory{
+        background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.3)
+            ),
+        url(../src/img/trajectory2_lowres85.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    #resume{
+        background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.3)
+            ),
+        url(../src/img/writing_dark_highres-min.jpg);
+        background-size: cover;"
+    }
+}
+
+.stretch{
+  display: flex!important;
+  align-items: stretch!important;
+}
+
+.jumb-text{
+  width: 100%;
+}
+
+/*RESUME*/
+
+#resumebox{
+    margin-top: 75px;
+    width: 100%;
+    min-height: 85vh;
+}
+
+/*Code Section*/
+
+#coding-intro{
+  margin-top: 100px;
+  margin-bottom: 5vh;
+}
+
+#coding-intro h2{
+  text-align: center;
+}
+
+#coding-intro p{
+  text-align: center;
+  font-style: italic;
+}
+
+#coding-jumbo h2{
+    text-align: center;
+}
+
+.code-section{
+    text-align: left;
+}
+.code-section h5{
+    margin-top: 5vh;
+}
+
+.code-section-img{
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.code-section-img p{
+    font-size: 15px;
+    text-align: justify;
+}
+
+.code-section-img img{
+    width:100%;
+}
+
+.disclaimer p{
+    font-size: 12px;
+    text-align: center;
+}
+
+.code-section h2{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: orange;
+}
+
+
+/*Projects Section*/
+
+#project-intro{
+    margin-top: 100px;
+}
+
+#project-intro h5{
+    text-align: center;
+    color:#111;
+    padding-bottom: 1vh;
+    font-family: 'Titillium Web' ,sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+#project-intro .container{
+    margin-top: 75px;
+    margin-bottom: 30px;
+}
+
+#coastal-content h5{
+    color:#111;
+    padding-bottom: 1vh;
+    font-family: 'Titillium Web' ,sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+
+#coastal-content .row{
+    margin-top: 25px;
+}
+
+#coastal-content #coastal-goals li{
+    color: #111;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+#coastal-content .figure{
+    margin-bottom: 75px;
+}
+
+#return{
+    margin-top: 75px;
+    text-align: center;
+}
+
+#disclaimer {
+    margin-top: 75px;
+    font-size: 14px;
+    text-align: center;
+}
+/*Publications*/
+
+/*PointClouds*/
+
+.buttonbg{
+    color: #6c757d
+}
+
+.buttonfg{
+    color: #f8f9fa;
+}
+
+.buttonfg:hover{
+    color: #e8491d;
+}
+
+#pointclouds-home .jumbotron{
+    margin-top: 100px;
+    min-height: 80vh;
+}
+
+#custom_icons{
+  position: absolute;
+  right:1vw;
+  margin-top: 100px!important;
+  z-index: 1;
+}
+
+#custom_icons li{
+  list-style: none;
+}
+
+#custom_icons .nav-link{
+  padding: 0px;
+  margin: 5px 0px;
+}
+
+#download a{
+  color: #111;
+}
+
+.modal-header-success {
+    color:#fff;
+    padding:9px 15px;
+    border-bottom:3px solid #e8491d;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1) , rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.2));
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.modal-header-success h4{
+  text-align: center;
+  color:#111;
+  padding-bottom: 1vh;
+  font-family: 'Titillium Web' ,sans-serif;
+  font-weight: 300;
+  font-size: 30px;
+  text-transform: capitalize;
+}
+
+.modal-body h5{
+  font-size: 25px;
+  line-height: 1.5em;
+  color: #333;
+  font-family: 'Titillium Web' ,sans-serif;
+  font-weight: 300;
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+
+.modal-body p, li{
+  color:#333;
+  line-height: 1.5em;
+  font-size: 15px;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.modal-body a{
+    color: #333;
+    text-decoration: underline;
+}
+
+.divider{
+  color:  #e8491d;
+}
+
+.pv-menu-list li{
+  color:#333;
+  line-height: 1.5em;
+  font-size: 15px;
+  font-family: 'Work Sans', sans-serif;
+}
+
+#potree_menu h3{
+  text-align: center;
+  color:#111;
+  padding-bottom: 1vh;
+  font-family: 'Titillium Web' ,sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-transform: capitalize;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+.accordion{
+  background-color: #fff;
+  border: none;
+}

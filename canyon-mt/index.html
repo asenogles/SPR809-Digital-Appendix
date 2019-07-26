@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>SPR809 Digital Appendix | Canyon Mt</title>
+
+	<link rel="stylesheet" type="text/css" href="../libs/potree/potree.css">
+	<link rel="stylesheet" type="text/css" href="../libs/jquery-ui/jquery-ui.min.css">
+	<!--<link rel="stylesheet" type="text/css" href="../libs/perfect-scrollbar/css/perfect-scrollbar.css">-->
+	<link rel="stylesheet" href="../libs/openlayers3/ol.css" type="text/css">
+	<link rel="stylesheet" href="../libs/spectrum/spectrum.css" type="text/css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/addtocss.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Titillium+Web:200,200i,300,300i,400,400i,600,600i,700,700i,900|Work+Sans:300,400" rel="stylesheet">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135674997-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-135674997-1');
+	</script>
+  </head>
+
+  <body>
+
+	<script src="../libs/jquery/jquery-3.1.1.js"></script>
+	<script src="../libs/spectrum/spectrum.js"></script>
+
+	<script src="../libs/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+	<script src="../libs/jquery-ui/jquery-ui.min.js"></script>
+	<script src="../libs/three.js/build/three.js"></script>
+	<script src="../libs/other/stats.min.js"></script>
+	<script src="../libs/other/BinaryHeap.js"></script>
+	<script src="../libs/tween/tween.min.js"></script>
+	<script src="../libs/d3/d3.js"></script>
+	<script src="../libs/proj4/proj4.js"></script>
+	<script src="../libs/openlayers3/ol.js"></script>
+    <script src="../libs/i18next/i18next.js"></script>
+
+	<script src="../libs/potree/potree.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+	<!--<script src="../libs/plasio/js/laslaz.js"></script>-->
+	<!--<script src="../libs/plasio/vendor/bluebird.js"></script>-->
+     <script src="../js/bootstrap.min.js"></script>
+     <script src="../js/addtojs.js"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center fixed-top custom-nav">
+        <ul id="cover-images" class="navbar-nav justify-content-center">
+            <li><img src="../img/logoOSU2.png" class="d-inline-block align-top mr-auto"></li>
+            <li><img src="../img/ODOT_Logo.jpg" class="d-inline-block align-top mr-auto"></li>
+        </ul>
+        <a class="navbar-brand d-flex mr-auto" href="../" style="font-size:20px;">SPR809 Digital Appendix</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse w-100" id="collapsingNavbar3">
+              <ul class="navbar-nav w-100 justify-content-center">
+                  <li class="nav-item">
+                      <a class="nav-link" href="../" title="SPR809 Digital Appendix | Home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active" href="./" title="SPR809 Digital Appendix | Canyon Mt">Canyon Mt</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="../eddyville" title="SPR809 Digital Appendix | Eddyville">Eddyville</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="../hogg-rock" title="SPR809 Digital Appendix | Hogg Rock">Hogg Rock</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="../rowena" title="SPR809 Digital Appendix | Rowena">Rowena</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="../yellow-jacket" title="SPR809 Digital Appendix | Yellow Jacket">Yellow Jacket</a>
+                  </li>
+              </ul>
+              <ul class="navbar-nav w-50 justify-content-center">
+                  <li class="nav-item">
+                      <a class="nav-link" href="#" data-toggle="modal" data-target="#infomodal" title="SPR809 Digital Appendix | Info"><i data-feather="info"></i> Info</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#" data-toggle="modal" data-target="#helpmodal" onclick="$('#carouselExampleIndicators').carousel(0);" title="SPR809 Digital Appendix | Help"><i data-feather="help-circle"></i> Help</a>
+                  </li>
+              </ul>
+          </div>
+    </nav>
+    <div class="potree_container" style="position: absolute; width: 100vw; height: 100vh; left: 0px; top: 0px; bottom:0px; padding:none;">
+	       <div id="potree_render_area"style="margin-top:100px;padding:none;"></div>
+		<div id="potree_sidebar_container" style="margin-top:100px;padding:none;"></div>
+        <!--Scale Bars-->
+        <div style="position: absolute; bottom:0vh; z-index: 1;margin-bottom:none!important;padding-bottom:none!important;">
+          <ul>
+            <li style="list-style: none;">
+                <span>
+                    <h1 id="raiclasstitle">RAI class</h1>
+                    <img id="scalebar" src="../img/RAI_Scalebar.png" style="width:60vw; margin-left:20vw; margin-bottom:none!important;padding-bottom:none!important;">
+                </span>
+            </li>
+          </ul>
+          </div>
+          <div style="position: absolute; right:1vw;top:0px; z-index: 1;max-height:60vh; margin-bottom:none!important;padding-bottom:none!important;border-bottom:none!important;">
+            <ul style="align-items:center;">
+            <li style="list-style:none;"><div id="scene_list"</div></li>
+              <li style="list-style: none;">
+                  <span>
+                      <h1 style="text-align:center; text-decoration:underline; font-size:30px; padding-bottom:none;">RAI score</h1>
+                      <img id="scalebar" src="../img/EV_RAIscore_alt.png" style="max-height:60vh; margin-bottom:none!important;padding-bottom:none!important;">
+                  </span>
+              </li>
+            </ul>
+            </div>
+            <!--Scene List-->
+    </div>
+</div>
+
+    <!--<div style="position:absolute; z-index:1; top:500px; left:20px;">
+         <input type="checkbox" id="myCheck2" onclick="toggleimg()">
+    </div>-->
+    <!--Delete lines 15092-15094 of js file to remove button icon-->
+    <!--Change line 19079 - "<div class="scene_header" onclick="$(this).next().slideToggle(200)">" to whatever style you want-->
+
+    <!-- Info Modal -->
+    <div class="modal fade" id="infomodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header modal-header-success">
+                    <h4 class="modal-title">Information</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Project Overview</h5>
+                    <p> <!-- move to editable js file -->
+                        This page concisely displays lidar data collected as part of the SPR809 "Predicting seismic-induced rockfall hazard for targeted site mitigation" research project.
+                        Visit the <a href="../" target="_blanks">Home Page</a>
+                         for more information about the project.</p>
+                        <h5>RAI Classification</h5>
+                        <p>The RAI is a simple morphological based approach for assessing rockfall hazard.
+                            Points are assigned one of eight classes based of a classification scheme that
+                            utilizes a combination of local slope and roughness values.</p>
+                            <ul>
+                                <li>U - Unclassified</li>
+                                <li>T - Talus</li>
+                                <li>I - Intact</li>
+                                <li>Df - fragmented discontinous rock</li>
+                                <li>Dc - closely spaced discontinous rock</li>
+                                <li>Dw - widely to moderately spaced discontinous rock</li>
+                                <li>Os - steep overhang</li>
+                                <li>Oc - cantilevered overhang</li>
+                            </ul>
+                        <p>From these classifications, the "RAI score" (estimated annual kinetic energy in kilojoules)
+                        is calculated for each point using empircally derived failure depths/rates for each class.
+                        <br><br>
+                        More information, including the background, development, and classification methods used by the RAI
+                         can be found by in the
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0013795216305671" target="_blanks">RAI paper</a>.
+                    </p>
+                    <hr>
+                    <h5>Data Attribution</h5>
+                    <p>
+                        Data displayed was collected as part of a research project performed by Oregon State University
+                         and funded by the Oregon Department Of Transportation (ODOT) under research project SPR809.</p>
+                        <ul>
+                            <li>
+                                RAI class/score Pointcloud data was collected using the Leica P40 and Riegl VZ-400 terrestrial lidar scanners.
+                            </li>
+                            <li>
+                                Background pointcloud data was created using a combination of TLS, MLS and UAS sfm data depending on site (UAS/MLS data courtesy of ODOT).
+                            </li>
+                            <li>
+                                Data displayed was subsampled to 5cm for hosting reasons, and thus does not represent the full resolution of available data.
+                            </li>
+                            <li>
+                                Data visualization on this site was created using <a href="http://www.potree.org/" target="_blanks">potree</a>.
+                            </li>
+                        </ul>
+                        <hr>
+                    <p id="disclaimer"><strong>DISCLAIMER:</strong> Any opinions, findings, and conclusions or recommendations expressed in this material
+                        are those of the author(s) and do not necessarily reflect the views of the Oregon Department of Transportation or Oregon State University.</p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+      </div>
+
+    <!-- Help Modal -->
+  <div class="modal fade" id="helpmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+              <div class="modal-header modal-header-success">
+                  <h4 class="modal-title">Help <a id="helpsubtitle">(1/9) - Layout</a></h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body" id="helpmodalbody">
+                  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+                          <div class="carousel-inner" data-interval="false">
+
+                              <!-- LAYOUT-->
+                              <div class="carousel-item active" id="carousel_1">
+                                  <img class="d-block w-100" src="../img/01_LAYOUT2.png" width = "100%" alt="First slide">
+                                  <hr>
+                                  <p style="height:100px">This page contains point-clouds in a
+                                    <a href="http://potree.org/" target="_blank">potree viewer</a>.
+                                    Various operations can by carried out using the tools contained in the
+                                    sidebar on the top left of the page. Specific information about the project can found by
+                                    selecting the information icon on the right of the page.</p>
+                              </div>
+
+                              <!-- NAVIGATION-->
+                              <div class="carousel-item " id="carousel_2">
+                                  <!--<img class="d-block w-100" src="doc/howto/04_NAV.gif" width = "100%" alt="First slide"> TODO: make pictures-->
+                                  <hr>
+                                  <p style="height:100px">Use the left mouse button to orbit around a point.
+                                    Use the scroll wheel to zoom.  Use the right mouse button to pan the view.
+                                    Double click a point to fly to it and reset the rotation center.</p>
+                              </div>
+
+                              <!--APPEARANCE-->
+                              <div class="carousel-item " id="carousel_3">
+                                  <!--<img class="d-block w-100" src="doc/howto/09_APPEARANCE.gif" width = "100%" alt="First slide"> TODO: make pictures-->
+                                  <hr>
+                                  <p style="height:100px">Under "Appearance" in the sidebar, there are various appearance sliders and buttons
+                                    which you can use to change the quality and settings of the potree viewer,
+                                    as well as changing the background color under the "Appearance" tab.</p>
+                              </div>
+
+                              <!-- Scene Box-->
+                              <div class="carousel-item " id="carousel_4">
+                                  <!--<img class="d-block w-100" src="doc/howto/04_NAV.gif" width = "100%" alt="First slide"> TODO: make pictures-->
+                                  <hr>
+                                  <p style="height:100px">Located in the top right corner, the scene box allows users to toggle on/off the RAI class, RAI scene
+                                      and Background pointclouds.</p>
+                              </div>
+
+                              <!-- MEASURE BUTTONS-->
+                              <div class="carousel-item " id="carousel_5">
+                                  <!--<img class="d-block w-100" src="doc/howto/08_MEASUREMENTS.png" width = "100%" alt="First slide"> TODO: make pictures-->
+                                  <hr>
+                                  <p>The measurements toolbar enables some basic measurements on the pointcloud
+                                    (including point query, distance/height and angle measurements, area measurements) Left click to insert a new vertex.
+                                    Right click to complete a measurement.
+                                    Measurements are displayed on the screen and also under the "measurements" branch in the scene tree
+                                    where they can be copied or exported. The "Remove All" (red X) button will clear all measurements.</p>
+                              </div>
+
+                              <!-- CROSS SECTION-->
+                              <div class="carousel-item " id="carousel_6">
+                                  <!--<img class="d-block w-100" src="doc/howto/09_APPEARANCE.gif" width = "100%" alt="First slide"> TODO: make pictures-->
+                                  <hr>
+                                  <p style="height:100px">Under "tools" - "measurement", the cross-section tool allows a cross-section
+                                  to be created perpendicular to the Z-axis. Create the profile by selecting the tool, left click to
+                                add vertices, right click to finish the cross-section. A profile can then be viewed/exported under the "Measurements"
+                              branch in the scene tree by selecting - "show 2d profile". The width of the cross-section can also be modified.</p>
+                              </div>
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button id="prevBtn" type="button" class="btn btn-secondary" onclick="stepCarousel('prev')">Previous</button>
+                  <button id="nextBtn" type="button" class="btn btn-primary" onclick="stepCarousel('next')">Next</button>
+              </div>
+          </div>
+      </div>
+    </div>
+
+
+	<script>
+
+		window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
+
+		viewer.setEDLEnabled(true);
+		viewer.setFOV(60);
+		viewer.setPointBudget(5*1000*1000);
+		viewer.setEDLEnabled(true);
+		viewer.setBackground("white"); // ["skybox", "gradient", "black", "white"];
+		viewer.setDescription(``);
+		viewer.loadSettingsFromURL();
+        viewer.scene.view.position.set(55224.00, 8921.72, 304.26);
+        viewer.scene.view.lookAt(new THREE.Vector3(55313.70, 9038.01, 265.25));
+        viewer.setMinNodeSize(0);
+
+		viewer.loadGUI(() => {
+			viewer.setLanguage('en');
+			$("#menu_tools").next().show();
+			//viewer.toggleSidebar();
+		});
+
+        Potree.loadPointCloud("../pointcloud/canyon_mt_tls_rai_score/cloud.js", "RAI Score", e => {
+            let pointcloud = e.pointcloud;
+            let material = pointcloud.material;
+            viewer.scene.addPointCloud(pointcloud);
+            material.pointColorType = Potree.PointColorType.RGB;
+            material.size = 0.25;
+            material.pointSizeType = Potree.PointSizeType.ATTENUATED;
+            material.shape = Potree.PointShape.CIRCLE;
+            viewer.fitToScreen();
+        });
+
+        Potree.loadPointCloud("../pointcloud/canyon_mt_background/cloud.js", "Background", e => {
+            let pointcloud = e.pointcloud;
+            let material = pointcloud.material;
+            viewer.scene.addPointCloud(pointcloud);
+            material.pointColorType = Potree.PointColorType.RGB;
+            material.size = 0.25;
+            material.pointSizeType = Potree.PointSizeType.ATTENUATED;
+            material.shape = Potree.PointShape.CIRCLE;
+            viewer.fitToScreen();
+
+        });
+
+        Potree.loadPointCloud("../pointcloud/canyon_mt_tls_rai/cloud.js", "RAI class", e => {
+            let pointcloud = e.pointcloud;
+            let material = pointcloud.material;
+            viewer.scene.addPointCloud(pointcloud);
+            material.pointColorType = Potree.PointColorType.RGB;
+            material.size = 0.25;
+            material.pointSizeType = Potree.PointSizeType.ATTENUATED;
+            material.shape = Potree.PointShape.CIRCLE;
+            viewer.fitToScreen();
+        });
+
+	</script>
+    <script>feather.replace()</script>
+    <script src="../js/addtojs.js"></script>
+  </body>
+</html>
