@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>SPR809 Digital Appendix | Canyon Mt</title>
+    <title>SPR809 Digital Appendix | Rowena</title>
 
 	<link rel="stylesheet" type="text/css" href="../libs/potree/potree.css">
 	<link rel="stylesheet" type="text/css" href="../libs/jquery-ui/jquery-ui.min.css">
@@ -57,7 +57,7 @@
             <li><img src="../img/logoOSU2.png" class="d-inline-block align-top mr-auto"></li>
             <li><img src="../img/ODOT_Logo.jpg" class="d-inline-block align-top mr-auto"></li>
         </ul>
-        <a class="navbar-brand d-flex mr-auto" href="../" style="font-size:20px;">SPR809 Digital Appendix</a>
+        <a class="navbar-brand d-flex mr-auto mx-auto" href="../" style="font-size:20px;">SPR809 Digital Appendix</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target=".navbar-collapse">
               <span class="navbar-toggler-icon"></span>
         </button>
@@ -93,34 +93,65 @@
           </div>
     </nav>
     <div class="potree_container" style="position: absolute; width: 100vw; height: 100vh; left: 0px; top: 0px; bottom:0px; padding:none;">
-	       <div id="potree_render_area"style="margin-top:100px;padding:none;"></div>
-		<div id="potree_sidebar_container" style="margin-top:100px;padding:none;"></div>
+	       <div id="potree_render_area"style="margin-top:10vh;padding:none;"></div>
+		<div id="potree_sidebar_container" style="margin-top:10vh; padding:none;"></div>
         <!--Scale Bars-->
-        <div style="position: absolute; bottom:0vh; z-index: 1;margin-bottom:none!important;padding-bottom:none!important;">
+        <div id="raiclasscontainer">
           <ul>
-            <li style="list-style: none;">
+            <li style="list-style: none; margin-left:20vw">
                 <span>
-                    <h1 style="text-align:center; margin-left:20vw; text-decoration:underline; font-size:30px; padding-bottom:none;">RAI class</h1>
-                    <img id="scalebar" src="../img/RAI_Scalebar.png" style="width:60vw; margin-left:20vw; margin-bottom:none!important;padding-bottom:none!important;">
+                    <h1 id="raiclasstitle" class="info-popup" data-toggle="modal" data-target="#infomodal">RAI class</h1>
+                    <!--<img id="scalebar" src="../img/RAI_Scalebar_white.png" style="width:60vw; margin-left:20vw; margin-bottom:none!important;padding-bottom:none!important;">-->
+                    <div style="background-color:#fff;">
+                    <div class="scalebar">
+                        <img class="endbar" src="../img/unclassified.png">
+                        <span class="scalebartext">unclassified</span>
+                    </div>
+                    <div class="scalebar">
+                        <img class="midbar" src="../img/talus2.png">
+                        <span class="scalebartext">talus</span>
+                    </div>
+                    <div class="scalebar">
+                        <img class="midbar" src="../img/intact.png">
+                        <span class="scalebartext">intact</span>
+                    </div>
+                    <div class="scalebar">
+                        <img class="midbar" src="../img/fragment.png">
+                        <span class="scalebartext">fragmented discontinous rock</span>
+                    </div>
+                    <div class="scalebar">
+                        <img class="midbar" src="../img/closely.png">
+                        <span class="scalebartext">closely spaced discontinous rock</span>
+                    </div>
+                    <div class="scalebar">
+                        <img class="midbar" src="../img/widely.png">
+                        <span class="scalebartext">widely spaced discontinous rock</span>
+                    </div>
+                    <div class="scalebar">
+                        <img class="midbar" src="../img/steepoverhang.png">
+                        <span class="scalebartext">steep overhang</span>
+                    </div>
+                    <div class="scalebar">
+                        <img class="endbar" src="../img/cantilevered.png">
+                        <span class="scalebartext">cantilevered overhang</span>
+                    </div>
+                    </div>
                 </span>
             </li>
           </ul>
           </div>
-          <div style="position: absolute; right:1vw;bottom:5vh; z-index: 1;margin-bottom:none!important;padding-bottom:none!important;border-bottom:none!important;">
+          <div id="raiscorecontainer">
+              <div id="scene_list"></div>
             <ul>
               <li style="list-style: none;">
                   <span>
-                      <h1 style="text-align:center; text-decoration:underline; font-size:30px; padding-bottom:none;">RAI score</h1>
-                      <img id="scalebar" src="../img/EV_RAIscore_0_02.png" style="height:60vh; margin-bottom:none!important;padding-bottom:none!important;">
+                      <h1 id="raiscoretitle" class="info-popup" data-toggle="modal" data-target="#infomodal">RAI score</h1>
+                      <img id="raiscorebar" src="../img/EV_RAIscore_0_02.png">
                   </span>
               </li>
             </ul>
-            </div>
             <!--Scene List-->
-            <div>
-                <div id="scene_list"</div>
-            </div>
-    </div>
+</div>
 </div>
 
     <!--<div style="position:absolute; z-index:1; top:500px; left:20px;">
@@ -216,13 +247,13 @@
                                   <p style="height:100px">This page contains point-clouds in a
                                     <a href="http://potree.org/" target="_blank">potree viewer</a>.
                                     Various operations can by carried out using the tools contained in the
-                                    sidebar on the top left of the page. Specific information about the project can found by
-                                    selecting the information icon on the right of the page.</p>
+                                    sidebar on the top left of the page. Specific information about the project and the RAI
+                                    can found by selecting the information icon on the right of the page.</p>
                               </div>
 
                               <!-- NAVIGATION-->
                               <div class="carousel-item " id="carousel_2">
-                                  <!--<img class="d-block w-100" src="doc/howto/04_NAV.gif" width = "100%" alt="First slide"> TODO: make pictures-->
+                                  <img class="d-block w-75 mx-auto" src="../img/02_NAVIGATION_800.gif" width = "100%" alt="First slide">
                                   <hr>
                                   <p style="height:100px">Use the left mouse button to orbit around a point.
                                     Use the scroll wheel to zoom.  Use the right mouse button to pan the view.
@@ -231,7 +262,7 @@
 
                               <!--APPEARANCE-->
                               <div class="carousel-item " id="carousel_3">
-                                  <!--<img class="d-block w-100" src="doc/howto/09_APPEARANCE.gif" width = "100%" alt="First slide"> TODO: make pictures-->
+                                  <img class="d-block w-75 mx-auto" src="../img/03_APPEARANCE_800.gif" width = "100%" alt="First slide">
                                   <hr>
                                   <p style="height:100px">Under "Appearance" in the sidebar, there are various appearance sliders and buttons
                                     which you can use to change the quality and settings of the potree viewer,
@@ -240,15 +271,16 @@
 
                               <!-- Scene Box-->
                               <div class="carousel-item " id="carousel_4">
-                                  <!--<img class="d-block w-100" src="doc/howto/04_NAV.gif" width = "100%" alt="First slide"> TODO: make pictures-->
+                                  <img class="d-block w-75 mx-auto" src="../img/04_SCENE_800_COMPRESS.gif" width = "100%" alt="First slide">
                                   <hr>
-                                  <p style="height:100px">Located in the top right corner, the scene box allows users to toggle on/off the RAI class, RAI scene
-                                      and Background pointclouds.</p>
+                                  <p style="height:100px">Located in the top right corner, the scene box allows users to toggle on/off the RAI class, RAI score
+                                      and Background pointclouds. The RAI class scalebar can popup class names by hovering the mouse over the class. More information about the RAI classes
+                                      and RAI score can be found by clicking the info icon at the top of the screen, or the RAI score or RAI class text.</p>
                               </div>
 
                               <!-- MEASURE BUTTONS-->
                               <div class="carousel-item " id="carousel_5">
-                                  <!--<img class="d-block w-100" src="doc/howto/08_MEASUREMENTS.png" width = "100%" alt="First slide"> TODO: make pictures-->
+                                  <img class="d-block w-75 mx-auto" src="../img/05_MEASUREMENTS_800.gif" width = "100%" alt="First slide">
                                   <hr>
                                   <p>The measurements toolbar enables some basic measurements on the pointcloud
                                     (including point query, distance/height and angle measurements, area measurements) Left click to insert a new vertex.
@@ -259,7 +291,7 @@
 
                               <!-- CROSS SECTION-->
                               <div class="carousel-item " id="carousel_6">
-                                  <!--<img class="d-block w-100" src="doc/howto/09_APPEARANCE.gif" width = "100%" alt="First slide"> TODO: make pictures-->
+                                  <img class="d-block w-75 mx-auto" src="../img/06_CROSS_SECTION_800.gif" width = "100%" alt="First slide">
                                   <hr>
                                   <p style="height:100px">Under "tools" - "measurement", the cross-section tool allows a cross-section
                                   to be created perpendicular to the Z-axis. Create the profile by selecting the tool, left click to
@@ -286,14 +318,14 @@
 
 		viewer.setEDLEnabled(true);
 		viewer.setFOV(60);
-		viewer.setPointBudget(5*1000*1000);
+		viewer.setPointBudget(1*1000*1000);
 		viewer.setEDLEnabled(true);
 		viewer.setBackground("white"); // ["skybox", "gradient", "black", "white"];
 		viewer.setDescription(``);
 		viewer.loadSettingsFromURL();
-        viewer.scene.view.position.set(87853.67, 33075.38, 133.49);
-        viewer.scene.view.lookAt(new THREE.Vector3(87503.18, 32832.92, 102.85));
-        viewer.setMinNodeSize(0);
+    viewer.scene.view.position.set(87853.67, 33075.38, 133.49);
+    viewer.scene.view.lookAt(new THREE.Vector3(87503.18, 32832.92, 102.85));
+    viewer.setMinNodeSize(0);
 
 		viewer.loadGUI(() => {
 			viewer.setLanguage('en');

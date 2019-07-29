@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>SPR809 Digital Appendix | Canyon Mt</title>
+    <title>SPR809 Digital Appendix | Hogg Rock</title>
 
 	<link rel="stylesheet" type="text/css" href="../libs/potree/potree.css">
 	<link rel="stylesheet" type="text/css" href="../libs/jquery-ui/jquery-ui.min.css">
@@ -57,7 +57,7 @@
             <li><img src="../img/logoOSU2.png" class="d-inline-block align-top mr-auto"></li>
             <li><img src="../img/ODOT_Logo.jpg" class="d-inline-block align-top mr-auto"></li>
         </ul>
-        <a class="navbar-brand d-flex mr-auto" href="../" style="font-size:20px;">SPR809 Digital Appendix</a>
+        <a class="navbar-brand d-flex mr-auto mx-auto" href="../" style="font-size:20px;">SPR809 Digital Appendix</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target=".navbar-collapse">
               <span class="navbar-toggler-icon"></span>
         </button>
@@ -93,8 +93,8 @@
           </div>
     </nav>
     <div class="potree_container" style="position: absolute; width: 100vw; height: 100vh; left: 0px; top: 0px; bottom:0px; padding:none;">
-	       <div id="potree_render_area"style="margin-top:100px;padding:none;"></div>
-		<div id="potree_sidebar_container" style="margin-top:100px;padding:none;"></div>
+	       <div id="potree_render_area"style="margin-top:10vh;padding:none;"></div>
+		<div id="potree_sidebar_container" style="margin-top:10vh; padding:none;"></div>
         <!--Scale Bars-->
         <div id="raiclasscontainer">
           <ul>
@@ -247,13 +247,13 @@
                                   <p style="height:100px">This page contains point-clouds in a
                                     <a href="http://potree.org/" target="_blank">potree viewer</a>.
                                     Various operations can by carried out using the tools contained in the
-                                    sidebar on the top left of the page. Specific information about the project can found by
-                                    selecting the information icon on the right of the page.</p>
+                                    sidebar on the top left of the page. Specific information about the project and the RAI
+                                    can found by selecting the information icon on the right of the page.</p>
                               </div>
 
                               <!-- NAVIGATION-->
                               <div class="carousel-item " id="carousel_2">
-                                  <!--<img class="d-block w-100" src="doc/howto/04_NAV.gif" width = "100%" alt="First slide"> TODO: make pictures-->
+                                  <img class="d-block w-75 mx-auto" src="../img/02_NAVIGATION_800.gif" width = "100%" alt="First slide">
                                   <hr>
                                   <p style="height:100px">Use the left mouse button to orbit around a point.
                                     Use the scroll wheel to zoom.  Use the right mouse button to pan the view.
@@ -262,7 +262,7 @@
 
                               <!--APPEARANCE-->
                               <div class="carousel-item " id="carousel_3">
-                                  <!--<img class="d-block w-100" src="doc/howto/09_APPEARANCE.gif" width = "100%" alt="First slide"> TODO: make pictures-->
+                                  <img class="d-block w-75 mx-auto" src="../img/03_APPEARANCE_800.gif" width = "100%" alt="First slide">
                                   <hr>
                                   <p style="height:100px">Under "Appearance" in the sidebar, there are various appearance sliders and buttons
                                     which you can use to change the quality and settings of the potree viewer,
@@ -271,7 +271,7 @@
 
                               <!-- Scene Box-->
                               <div class="carousel-item " id="carousel_4">
-                                  <!--<img class="d-block w-100" src="doc/howto/04_NAV.gif" width = "100%" alt="First slide"> TODO: make pictures-->
+                                  <img class="d-block w-75 mx-auto" src="../img/04_SCENE_800_COMPRESS.gif" width = "100%" alt="First slide">
                                   <hr>
                                   <p style="height:100px">Located in the top right corner, the scene box allows users to toggle on/off the RAI class, RAI score
                                       and Background pointclouds. The RAI class scalebar can popup class names by hovering the mouse over the class. More information about the RAI classes
@@ -280,7 +280,7 @@
 
                               <!-- MEASURE BUTTONS-->
                               <div class="carousel-item " id="carousel_5">
-                                  <!--<img class="d-block w-100" src="doc/howto/08_MEASUREMENTS.png" width = "100%" alt="First slide"> TODO: make pictures-->
+                                  <img class="d-block w-75 mx-auto" src="../img/05_MEASUREMENTS_800.gif" width = "100%" alt="First slide">
                                   <hr>
                                   <p>The measurements toolbar enables some basic measurements on the pointcloud
                                     (including point query, distance/height and angle measurements, area measurements) Left click to insert a new vertex.
@@ -291,7 +291,7 @@
 
                               <!-- CROSS SECTION-->
                               <div class="carousel-item " id="carousel_6">
-                                  <!--<img class="d-block w-100" src="doc/howto/09_APPEARANCE.gif" width = "100%" alt="First slide"> TODO: make pictures-->
+                                  <img class="d-block w-75 mx-auto" src="../img/06_CROSS_SECTION_800.gif" width = "100%" alt="First slide">
                                   <hr>
                                   <p style="height:100px">Under "tools" - "measurement", the cross-section tool allows a cross-section
                                   to be created perpendicular to the Z-axis. Create the profile by selecting the tool, left click to
@@ -318,7 +318,7 @@
 
 		viewer.setEDLEnabled(true);
 		viewer.setFOV(60);
-		viewer.setPointBudget(5*1000*1000);
+		viewer.setPointBudget(1*1000*1000);
 		viewer.setEDLEnabled(true);
 		viewer.setBackground("white"); // ["skybox", "gradient", "black", "white"];
 		viewer.setDescription(``);

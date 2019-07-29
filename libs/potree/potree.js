@@ -19076,7 +19076,7 @@ function initSceneList(){
 			<span class="scene_item">
 				<!-- HEADER -->
                 <!--HACK: Copy Starts-->
-				<div id="scene_order" style="float: right; margin: 6px; margin-right: 15px"><input id="scene_list_item_pointcloud_${i}" type="checkbox" ${checked} /></div>
+				<div id="scene_order" style="float: right; margin: 0px; margin-right: 15px"><input id="scene_list_item_pointcloud_${i}" type="checkbox" ${checked} /></div>
 				<div class="scene_header">
 					<i data-feather="cloud"></i>
 					<span class="scene_header_title">${title}</span>

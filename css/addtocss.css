@@ -21,7 +21,7 @@ body{
     z-index: 1;
     position: inline;
     background-color: #fff;
-    margin-bottom: 2vh;
+    margin-bottom: 1vh;
 }
 
 #scene_list :hover{
@@ -106,15 +106,19 @@ a{
 }
 
 .custom-nav{
-    border-bottom: rgba(0, 0, 0, 1) 10px solid;
+    border-bottom: rgba(0, 0, 0, 1) 5px solid;
     background-color: #D73F09 !important;
-    min-height: 100px;
+    min-height: 10vh;
+}
+
+.navbar-brand{
+    font-size:3vmin!important;
 }
 
 .custom-nav a{
     font-family: 'Titillium Web' ,sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 2.5vmin;
     color:#fff;
 }
 
@@ -124,7 +128,8 @@ a{
 }
 
 .custom-nav img{
-    height: 50px;
+    height: 5vh;
+    max-height: 50px;
 }
 
 #cover-images{
@@ -188,7 +193,7 @@ a{
     width: 10vw;
     text-align:center;
     text-decoration:underline;
-    font-size:30px;
+    font-size:3vmin;
     background-color:#fff;
     margin-left: 23.5vw;
 }
@@ -202,7 +207,8 @@ a{
     position: absolute;
     right:1vw;
     z-index: 1;
-    top: 120px;
+    top: 10vh;
+    margin-top:5px;
 }
 
 #raiscoretitle{
@@ -216,6 +222,10 @@ a{
 #raiscorebar{
     max-height:55vh;
     background-color: #fff;
+    justify-content: right;
+    align-self: right;
+    align-content: right;
+    align-items: right;
 }
 
 .scalebar {
@@ -231,7 +241,7 @@ a{
     left: 50%;
     margin-left: -4vw;
     color:#D73F09;
-    font-size: 25px;
+    font-size: 2.5vmin;
     font-family: 'Titillium Web' ,sans-serif;
     font-weight: 400;
     text-transform: capitalize;
@@ -255,7 +265,7 @@ a{
 /*Home Page*/
 
 #project-intro{
-    margin-top: 100px;
+    margin-top: 14vh;
 }
 
 #project-intro h5{
@@ -269,7 +279,7 @@ a{
 }
 
 #project-intro .container{
-    margin-top: 75px;
+    margin-top: 50px;
     margin-bottom: 30px;
 }
 
@@ -287,9 +297,9 @@ a{
     margin-top: 25px;
 }
 
-#coastal-content #coastal-goals li{
+#coastal-goals li{
     color: #111;
-    font-size: 19px;
+    font-size: 20px;
     margin-top: 20px;
     line-height: 1.5em;
     font-family: 'Work Sans', sans-serif;
@@ -297,6 +307,15 @@ a{
 
 #coastal-content .figure{
     margin-bottom: 75px;
+}
+
+.figure{
+  margin-top:10px;
+  font-size: 15px;
+}
+
+.no-figure-margin{
+  margin-bottom: 0px!important;
 }
 
 #return{
