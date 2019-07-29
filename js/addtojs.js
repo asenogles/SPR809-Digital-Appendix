@@ -1,3 +1,8 @@
+if (window.matchMedia("(max-width: 719px)").matches){
+  $(window).on('load',function(){
+      $('#mobile-warning').modal('show');
+  });
+}
 
 function stepCarousel(stepdir){
     $('#carouselExampleIndicators').carousel(stepdir);

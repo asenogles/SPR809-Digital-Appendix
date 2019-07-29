@@ -93,8 +93,27 @@
           </div>
     </nav>
     <div class="potree_container" style="position: absolute; width: 100vw; height: 100vh; left: 0px; top: 0px; bottom:0px; padding:none;">
-	       <div id="potree_render_area"style="margin-top:10vh;padding:none;"></div>
-		<div id="potree_sidebar_container" style="margin-top:10vh; padding:none;"></div>
+	       <div id="potree_render_area"></div>
+		<div id="potree_sidebar_container"></div>
+      <!--Mobile Warning-->
+      <div class="modal fade" id="mobile-warning" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                  <div class="modal-header modal-header-success">
+                      <h4 class="modal-title">WARNING!</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <p> <!-- move to editable js file -->
+                        This pointcloud viewer is not optimised for mobile viewing.
+                        For the best user experience, it is reccommended to view this digital
+                        appendix via desktop or laptop.</p>
+                  </div>
+              </div>
+          </div>
+        </div>
         <!--Scale Bars-->
         <div id="raiclasscontainer">
           <ul>
