@@ -22,6 +22,8 @@ Pointclouds are rendered using [potree](http://potree.org/). The following chang
 - The toolbox was streamlined by removing un-used items to simplify the page for users unfamiliar with [potree](http://potree.org/).
 - custom styling using CSS was applied to the page to maintain a pleasing and consistent ui across pages/elements.
 
+For hosting reasons, only the pointclouds from the Hogg Rock site are loaded on this github repository. 
+
 ## Dependencies
 The following libraries are utilized in this build:
 - [Potree](http://potree.org/)
